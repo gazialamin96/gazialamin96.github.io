@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Al Amin | Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAV -->
+<header class="glass-nav">
+  
+<nav>
+  <h2 class="logo">AL AMIN</h2>
+
+  <button class="menu-toggle">☰</button>
+
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#blog">Insights</a></li>
+    <li><a href="#personal">Personal</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+
+</header>
+<!-- ✅ MOBILE IMAGE (ONLY) -->
+<div class="top-profile">
+  <img src="asset/al-amin.png" alt="Al Amin">
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Engineering Intelligent Systems</h1>
+    <h2>Al Amin</h2>
+    <p>Senior System Analyst | ERP | DevOps | AI Automation</p>
+
+    <div class="hero-buttons">
+      <a href="#projects" class="btn">View Work</a>
+      <a href="Resume of Al Amin.pdf" download class="btn outline">Download Resume</a>
+    </div>
+  </div>
+
+  <!-- ✅ DESKTOP IMAGE -->
+  <div class="profile-card">
+    <img src="asset/al-amin.png" alt="Al Amin">
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="fade">
+  <h2>About</h2>
+
+  <p>
+    I am a results-driven Senior System Analyst specializing in enterprise ERP systems,
+    DevOps engineering, and AI-powered automation. With hands-on experience leading
+    large-scale implementations across manufacturing and global business environments,
+    I design and deliver scalable, high-performance systems that drive real business value.
+  </p>
+
+  <p>
+    My expertise spans ERP architecture, full-stack development, cloud-based deployment,
+    and system optimization. I have successfully led ERP rollouts for over 1000+ users,
+    integrating complex workflows, IoT solutions, and real-time analytics to support
+    data-driven decision-making.
+  </p>
+
+  <p>
+    I focus on building efficient, reliable, and intelligent systems — achieving
+    measurable results including 18% operational efficiency improvement, 60% process
+    automation, and maintaining 99.9% system uptime in production environments.
+  </p>
+
+  <p>
+    Passionate about innovation, I continuously leverage AI tools, modern DevOps practices,
+    and scalable architecture to optimize workflows, reduce manual effort, and enhance
+    system performance across global platforms.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="fade">
+  <h2>Core Competencies</h2>
+  <div class="grid competencies">
+
+  <div class="card">
+    <h3>ERP & AI Development</h3>
+    <p>
+      ERP Implementation & Rollout Leadership, AI‑Assisted Development,
+      Prompt Engineering, Vibe Coding.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>DevOps & CI/CD</h3>
+    <p>
+      Git-based version control, CI/CD pipelines, automated deployments
+      using GitHub Actions and server environments.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Manufacturing ERP Expertise</h3>
+    <p>
+      Supply Chain & Manufacturing modules (Cutting → Sewing → Finishing → Shipping).
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>ERP Lifecycle Management</h3>
+    <p>
+      Post Go-Live Support, Hypercare, SLA Management, UAT,
+      System Testing & Deployment.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Process & Documentation</h3>
+    <p>
+      Business Process Mapping, Requirement Analysis (BRS, BCP, FRS, FDD, TDD),
+      Training & Knowledge Transfer.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Automation & IoT</h3>
+    <p>
+      Automation systems, IoT production tracking,
+      API integration, cross-functional coordination.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Programming</h3>
+    <p>
+      PHP, C#, Python, Laravel, .NET, FastAPI, Node.js, Next.js.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Database Expertise</h3>
+    <p>
+      Oracle SQL, MySQL, SQL Server, PL/SQL, PostgreSQL
+      with optimization and performance tuning.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Governance & ERP Platforms</h3>
+    <p>
+      SAP, Odoo, MS Dynamics concepts, vendor management,
+      development governance.
+    </p>
+  </div>
+
+<div class="card">
+    <h3>Server</h3>
+    <p>
+      Oracle Linux, VPS Linux Server, MCP Server, Windows Server and Knowleged about Mac OS.
+    </p>
+  </div>
+
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="fade">
+  <h2>Projects</h2>
+
+  <div class="grid">
+
+<!-- ERP PRODUCT OWNER -->
+<div class="card project" onclick="openProject('erp_full')">
+  <h3>ERP Platform (Product Owner - Logic ERP)</h3>
+  <p>
+    Led customization, implementation, and full-stack development of
+    Logic ERP platform including frontend, backend, and database systems.
+  </p>
+
+  <button class="btn"
+    onclick="event.stopPropagation(); openProject('erp_full')">
+    View Details
+  </button>
+</div>
+
+    <!-- ERP -->
+<div class="card project" onclick="openProject('erp')">
+  <h3>ERP Automation Dashboard</h3>
+  <p>Real-time production monitoring & ERP analytics</p>
+
+  <button class="btn" onclick="event.stopPropagation(); openProject('erp')">
+    View Details
+  </button>
+</div>
+
+
+    <!-- IOT -->
+    <div class="card project" onclick="openProject('iot')">
+      <h3>IoT Worker Tracking</h3>
+      <p>Worker efficiency system using IoT + ERP API</p>
+      <button class="btn">View Details</button>
+    </div>
+
+    <!-- API -->
+    <div class="card project" onclick="openProject('api')">
+      <h3>Telecom API</h3>
+      <p>High-performance FastAPI backend system</p>
+      <button class="btn">View Details</button>
+    </div>
+
+<!-- E-COMMERCE -->
+<div class="card project" onclick="openProject('ecommerce')">
+  <h3>E-Commerce Platform (Sahaba Agency)</h3>
+  <p>
+    Full-scale eCommerce solution built with Laravel, MySQL,
+    and modern frontend technologies.
+  </p>
+  <button class="btn"
+    onclick="event.stopPropagation(); openProject('ecommerce')">
+    View Details
+  </button>
+</div>
+
+<!-- TOPEDU -->
+<div class="card project" onclick="openProject('topedu')">
+  <h3>TopEdu Global Platform</h3>
+  <p>
+    Study abroad platform with server management, deployment,
+    and full-stack maintenance.
+  </p>
+  <button class="btn"
+    onclick="event.stopPropagation(); openProject('topedu')">
+    View Details
+  </button>
+</div>
+
+<!-- DORIA -->
+<div class="card project" onclick="openProject('doria')">
+  <h3>Doria Shipping Ltd (Dubai)</h3>
+  <p>
+    Django CMS-based multinational corporate website with
+    server monitoring and maintenance.
+  </p>
+  <button class="btn"
+    onclick="event.stopPropagation(); openProject('doria')">
+    View Details
+  </button>
+</div>
+
+<!-- BACKYARD -->
+<div class="card project" onclick="openProject('backyard')">
+  <h3>Backyard Company (Austria)</h3>
+  <p>
+    Technical lead for system implementation, deployment,
+    and production support.
+  </p>
+  <button class="btn"
+    onclick="event.stopPropagation(); openProject('backyard')">
+    View Details
+  </button>
+</div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="fade">
+  <h2>Professional Experience</h2>
+
+  <div class="timeline">
+
+    <!-- CURRENT -->
+    <div class="card experience">
+      <h3>Senior System Analyst</h3>
+      <p><strong>Amtranet Group</strong> | Dec 2023 – Present</p>
+      <p><strong>Location:</strong> Tongi, Gazipur</p>
+
+      <h4>Key Achievements</h4>
+      <ul>
+        <li>ERP rollout for 1000+ users across multiple RMG units</li>
+        <li>Improved operational efficiency by 18%</li>
+        <li>Reduced manual reporting by 60% through automation</li>
+        <li>Maintained 99.9% uptime SLA</li>
+        <li>Reduced decision delay by 40% using real-time tracking</li>
+        <li>22% supply chain lead-time reduction</li>
+        <li>Remote support for multinational clients (Australia & Dubai)</li>
+      </ul>
+
+      <h4>Responsibilities</h4>
+      <ul>
+        <li>ERP system architecture, customization & implementation</li>
+        <li>Server management, monitoring & performance tuning</li>
+        <li>AI-assisted development (ChatGPT, Copilot, Claude)</li>
+        <li>Business process mapping & requirement analysis</li>
+        <li>Deployment, UAT, Go-Live execution & SLA management</li>
+        <li>IoT integration for production tracking</li>
+        <li>Database optimization (Oracle, MySQL, SQL Server)</li>
+      </ul>
+    </div>
+
+    <!-- REMOTE MULTINATIONAL -->
+    <div class="card experience">
+      <h3>Remote Technical Engineer & Developer</h3>
+      <p><strong>Backyard (Austria) | Doria Shipping (Dubai) | Sahaba Agency | TopEdu Global</strong></p>
+
+      <h4>Role</h4>
+      <p>
+        Working remotely as technical support engineer, server administrator,
+        and full-stack developer across multiple international companies.
+      </p>
+
+      <h4>Responsibilities</h4>
+      <ul>
+        <li>Server maintenance & deployment (Linux/Production)</li>
+        <li>Full-stack development (Laravel, MySQL, JavaScript)</li>
+        <li>Real-time system monitoring & bug fixing</li>
+        <li>Client system implementation and support</li>
+        <li>API integration & system optimization</li>
+        <li>Cross-timezone collaboration with global teams</li>
+      </ul>
+    </div>
+
+    <!-- INFOMEDIA -->
+    <div class="card experience">
+      <h3>Software Customization & Support Engineer</h3>
+      <p><strong>I-Infomedia Ltd</strong> | Jul 2023 – Dec 2023</p>
+
+      <h4>Achievements</h4>
+      <ul>
+        <li>Developed Telecom VAS systems</li>
+        <li>Optimized FastAPI performance</li>
+        <li>Improved system stability & monitoring</li>
+      </ul>
+
+      <h4>Responsibilities</h4>
+      <ul>
+        <li>L2/L3 production support</li>
+        <li>Server maintenance (Windows & Linux)</li>
+        <li>Database optimization (Oracle, MySQL)</li>
+      </ul>
+    </div>
+
+    <!-- SAARC SENIOR -->
+    <div class="card experience">
+      <h3>Senior Technical Support Specialist</h3>
+      <p><strong>Saarc Inc.</strong> | Jun 2022 – Jun 2023</p>
+
+      <ul>
+        <li>Managed hosting infrastructure & uptime optimization</li>
+        <li>Handled complex deployment & server issues</li>
+        <li>Maintained business-critical platforms</li>
+      </ul>
+    </div>
+
+    <!-- SAARC JUNIOR -->
+    <div class="card experience">
+      <h3>Junior Technical Support Engineer</h3>
+      <p><strong>Saarc Inc.</strong> | Oct 2020 – Jun 2022</p>
+
+      <ul>
+        <li>Developed WordPress & PHP websites</li>
+        <li>Managed hosting via cPanel & FTP</li>
+        <li>Provided daily technical troubleshooting</li>
+      </ul>
+    </div>
+
+    <!-- INTERN -->
+    <div class="card experience">
+      <h3>Digital Marketing Intern</h3>
+      <p><strong>Workspace InfoTech</strong> | Aug 2019 – Oct 2019</p>
+
+      <ul>
+        <li>SEO, Google Ads, social campaigns</li>
+        <li>Analytics reporting & performance tracking</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- BLOG -->
+<section id="blog" class="fade">
+  <h2>Insights</h2>
+
+  <div class="grid">
+
+    <!-- ERP -->
+    <div class="card blog">
+      <h3>Scaling ERP for 1000+ Users</h3>
+      <p>
+        Key lessons from implementing ERP across multiple production units,
+        including user onboarding, system stability, and adoption challenges.
+      </p>
+    </div>
+
+    <!-- AI -->
+    <div class="card blog">
+      <h3>AI in DevOps & Daily Engineering</h3>
+      <p>
+        How ChatGPT, Copilot, and Claude accelerate debugging,
+        documentation, and system design in real production environments.
+      </p>
+    </div>
+
+    <!-- Uptime -->
+    <div class="card blog">
+      <h3>Maintaining 99.9% System Uptime</h3>
+      <p>
+        Monitoring strategies, SLA management, and proactive debugging
+        to ensure uninterrupted production systems.
+      </p>
+    </div>
+
+    <!-- IoT -->
+    <div class="card blog">
+      <h3>IoT in Manufacturing (Real Use Case)</h3>
+      <p>
+        Integrating Intellier IoT devices with ERP platforms to track
+        worker efficiency, reduce idle time, and improve productivity.
+      </p>
+    </div>
+
+    <!-- Automation -->
+    <div class="card blog">
+      <h3>Automation That Reduced 60% Manual Work</h3>
+      <p>
+        Designing dashboards, reports, and workflows that significantly
+        cut manual operations in ERP environments.
+      </p>
+    </div>
+
+    <!-- ERP Architecture -->
+    <div class="card blog">
+      <h3>ERP Architecture & Integration Strategy</h3>
+      <p>
+        Best practices for integrating ERP systems with APIs, IoT,
+        and external platforms for scalable enterprise solutions.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PERSONAL INFORMATION -->
+<section id="personal" class="fade">
+  <h2>Personal Information</h2>
+
+  <div class="grid personal-grid">
+
+    <!-- PERSONAL DETAILS -->
+    <div class="card personal-card">
+      <h3>Personal Details</h3>
+
+      <p><strong>Father Name:</strong> Abul Basar</p>
+      <p><strong>Mother Name:</strong> Amena Begum</p>
+      <p><strong>NID:</strong> 3274883051</p>
+      <p><strong>Passport:</strong> A18717617</p>
+      <p><strong>DOB:</strong> 5th December, 1996</p>
+      <p><strong>Blood Group:</strong> O+</p>
+    </div>
+
+    <!-- ADDRESS -->
+    <div class="card personal-card">
+      <h3>Address</h3>
+
+      <p>
+        <strong>Present:</strong><br>
+        Diganto 117/2, Rosulbag Mor, Auchpara,<br>
+        Tongi, Gazipur, Dhaka, Bangladesh
+      </p>
+
+      <p style="margin-top:10px;">
+        <strong>Permanent:</strong><br>
+        5 Kori Bari, Dash Para, Ramganj,<br>
+        Lakshmipur, Chittagong, Bangladesh
+      </p>
+    </div>
+
+    <!-- LANGUAGE -->
+    <div class="card personal-card">
+      <h3>Language Proficiency</h3>
+
+      <p><strong>English:</strong> Good</p>
+      <p><strong>Certification:</strong> Medium of Instruction (MOI)</p>
+      <p><strong>Bangla:</strong> Native</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- REFERENCES -->
+<section id="references" class="fade">
+  <h2>References</h2>
+<p style="max-width:600px; margin-bottom:20px;">
+Trusted professionals who can verify my technical expertise,
+ERP implementation experience, and system leadership skills.
+</p>
+  <div class="grid">
+
+    <!-- Reference 1 -->
+    <div class="card reference">
+      <h3>Shahidul Islam</h3>
+      <p><strong>Manager (IT & MIS)</strong></p>
+      <p>Amtranet Group</p>
+      <p><i class="fas fa-phone"></i> +8801737282126</p>
+      <a href="https://www.linkedin.com/in/shahidul-islam-78473824/" target="_blank">
+        LinkedIn Profile
+      </a>
+    </div>
+
+    <!-- Reference 2 -->
+    <div class="card reference">
+      <h3>Md. Ashabul Haque</h3>
+      <p><strong>Service Desk Analyst</strong></p>
+      <p>United Nations OICT HQ</p>
+      <p><i class="fas fa-phone"></i> +66635069001</p>
+      <a href="https://www.linkedin.com/in/ashabul-haque/" target="_blank">
+        LinkedIn Profile
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- ABOUT -->
+    <div class="footer-col">
+      <h3>Al Amin</h3>
+      <p>
+        Senior System Analyst, ERP Specialist, DevOps Engineer & AI Automation Engineer.
+        Delivering enterprise solutions with real business impact.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        
+  <li><a href="#about">About</a></li>
+  <li><a href="#skills">Skills</a></li>
+  <li><a href="#projects">Projects</a></li>
+  <li><a href="#experience">Experience</a></li>
+  <li><a href="#contact">Contact</a></li
+
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-col">
+      <h3>Contact</h3>
+      
+<p><i class="fas fa-envelope"></i> gazialamin96@gmail.com</p>
+<p><i class="fas fa-phone"></i> +8801773754462</p>
+<p><i class="fas fa-location-dot"></i> Dhaka, Bangladesh</p>
+
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="footer-col">
+      <h3>Connect</h3>
+
+      
+
+<a href="https://github.com/gazialamin96" target="_blank">
+  <i class="fab fa-github"></i> GitHub
+</a>
+
+<a href="https://linkedin.com/in/gazi-alamin96" target="_blank">
+  <i class="fab fa-linkedin"></i> LinkedIn
+</a>
+
+
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2026 Al Amin. All rights reserved.</p>
+  </div>
+
+</footer>
+
+<!-- TERMINAL -->
+<div id="terminalModal" class="modal">
+  <div class="terminal">
+    <span id="close">×</span>
+    <div id="terminalOutput"></div>
+    <input id="terminalInput" placeholder="run command..." />
+  </div>
+</div>
+
+<!-- ✅ DYNAMIC PROJECT MODAL -->
+<div id="projectModal" class="modal">
+  <div class="project-modal">
+
+    <span id="projectClose">×</span>
+
+    <!-- ✅ CONTENT WILL LOAD FROM JS -->
+    <div id="projectContent"></div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
