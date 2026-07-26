@@ -186,7 +186,12 @@ nav {
   align-items: center;
   max-width: 1200px;
   margin: auto;
-  padding: 15px 20px;
+  padding: 8px 20px;
+}
+
+nav h2 {
+  margin: 0;
+  font-size: 18px;
 }
 
 
@@ -231,7 +236,7 @@ nav ul {
   nav ul {
     display: none;
     position: absolute;
-    top: 70px;
+    top: 48px;
     right: 10px;
     background: rgba(0,0,0,0.95);
     flex-direction: column;
