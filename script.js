@@ -609,7 +609,7 @@ document.addEventListener("click", (e) => {
     "System ready ✓",
   ];
 
-  const DURATION  = 3000;
+  const DURATION  = 5000;
   const STEP_MS   = 28;
   const TOTAL_STEPS = Math.round(DURATION / STEP_MS);
   const STATUS_STEP = Math.floor(TOTAL_STEPS / statuses.length);
