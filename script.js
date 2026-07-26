@@ -479,3 +479,81 @@ document.addEventListener("click", (e) => {
     if (btn) btn.classList.remove("open");
   }
 });
+
+
+// =========================
+// ✅ CUSTOM ANIMATED CURSOR
+// =========================
+(function initCursor() {
+
+  // Skip on touch-only devices (phones/tablets with no mouse)
+  if (!window.matchMedia("(pointer: fine)").matches) return;
+
+  document.body.classList.add("custom-cursor");
+
+  const dot  = document.getElementById("cursorDot");
+  const ring = document.getElementById("cursorRing");
+  if (!dot || !ring) return;
+
+  let mx = -200, my = -200; // dot position  (instant)
+  let rx = -200, ry = -200; // ring position (lagged)
+
+  // ── Dot follows mouse instantly ──────────────────────
+  document.addEventListener("mousemove", e => {
+    mx = e.clientX;
+    my = e.clientY;
+    dot.style.left = mx + "px";
+    dot.style.top  = my + "px";
+    dot.classList.add("visible");
+    ring.classList.add("visible");
+  });
+
+  // ── Ring follows with smooth lag (requestAnimationFrame) ──
+  (function tick() {
+    rx += (mx - rx) * 0.10;
+    ry += (my - ry) * 0.10;
+    ring.style.left = rx + "px";
+    ring.style.top  = ry + "px";
+    requestAnimationFrame(tick);
+  })();
+
+  // ── Hide when mouse leaves the page ─────────────────
+  document.addEventListener("mouseleave", () => {
+    dot.classList.remove("visible");
+    ring.classList.remove("visible");
+  });
+
+  document.addEventListener("mouseenter", () => {
+    dot.classList.add("visible");
+    ring.classList.add("visible");
+  });
+
+  // ── Hover state (links, buttons, cards, etc.) ────────
+  const TARGETS = "a, button, .btn, .card, label, [onclick], .float-btn, .menu-toggle, .share-copy-btn, .tab";
+
+  document.addEventListener("mouseover", e => {
+    if (e.target.closest(TARGETS)) {
+      dot.classList.add("is-hover");
+      ring.classList.add("is-hover");
+    }
+  });
+
+  document.addEventListener("mouseout", e => {
+    if (e.target.closest(TARGETS)) {
+      dot.classList.remove("is-hover");
+      ring.classList.remove("is-hover");
+    }
+  });
+
+  // ── Click burst ───────────────────────────────────────
+  document.addEventListener("mousedown", () => {
+    dot.classList.add("is-click");
+    ring.classList.add("is-click");
+  });
+
+  document.addEventListener("mouseup", () => {
+    dot.classList.remove("is-click");
+    ring.classList.remove("is-click");
+  });
+
+})();
