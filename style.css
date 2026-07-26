@@ -83,7 +83,7 @@ body {
 
 
 section {
-  padding: 20px 10px;
+  padding: 36px 20px;
   max-width: 1100px;
   margin: auto;
 }
@@ -165,7 +165,7 @@ section {
 
 
 section h2 {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-size: 28px;
 }
 
@@ -683,9 +683,9 @@ body.modal-open {
 
 .footer {
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  padding: 30px 30px 20px;
+  padding: 40px 40px 20px;
   color: white;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .footer-container {
@@ -1127,4 +1127,87 @@ body.modal-open {
 .edu-proficiency span {
   font-size: 13px;
   color: rgba(255,255,255,0.8);
+}
+
+
+/* =========================
+   CUSTOM ANIMATED CURSOR
+========================= */
+
+/* Only hide default cursor on pointer devices (not touch screens) */
+.custom-cursor *                  { cursor: none !important; }
+.custom-cursor input,
+.custom-cursor textarea,
+.custom-cursor select             { cursor: text !important; }
+
+/* Shared base */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 999999;
+}
+
+/* Small filled dot — tracks mouse exactly */
+.cursor-dot {
+  width: 7px;
+  height: 7px;
+  background: #00f7ff;
+  z-index: 999999;
+  transition:
+    width    0.2s ease,
+    height   0.2s ease,
+    background 0.2s ease,
+    opacity  0.3s ease;
+}
+
+/* Larger ring — lags behind for depth */
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 2px solid rgba(0,247,255,0.55);
+  z-index: 999998;
+  transition:
+    width        0.25s ease,
+    height       0.25s ease,
+    border-color 0.25s ease,
+    border-width 0.25s ease,
+    opacity      0.3s ease;
+}
+
+/* Visible state */
+.cursor-dot.visible,
+.cursor-ring.visible { opacity: 1; }
+
+/* Hover over links / buttons */
+.cursor-dot.is-hover {
+  width: 11px;
+  height: 11px;
+  background: #ff0080;
+}
+
+.cursor-ring.is-hover {
+  width: 50px;
+  height: 50px;
+  border-color: rgba(255,0,128,0.4);
+  border-width: 1.5px;
+}
+
+/* Click / mousedown burst */
+.cursor-dot.is-click {
+  width: 5px;
+  height: 5px;
+  background: white;
+}
+
+.cursor-ring.is-click {
+  width: 22px;
+  height: 22px;
+  border-color: rgba(255,255,255,0.85);
+  border-width: 2.5px;
 }
