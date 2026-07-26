@@ -275,20 +275,40 @@ nav a {
   color: #00f7ff;
 }
 
-/* BUTTON */
+/* BUTTON — sliding color left to right on hover */
 .btn {
   padding: 10px 20px;
   margin-top: 10px;
   display: inline-block;
   border-radius: 6px;
-  background: #00f7ff;
+  background: linear-gradient(to right, #1e3c72 50%, #00f7ff 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
   color: black;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  transition: background-position 0.4s ease, color 0.4s ease;
+}
+
+.btn:hover {
+  background-position: 0% 0;
+  color: white;
 }
 
 .btn.outline {
-  background: transparent;
-  border: 1px solid #00f7ff;
+  background: linear-gradient(to right, #00f7ff 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  border: 2px solid #00f7ff;
   color: #00f7ff;
+}
+
+.btn.outline:hover {
+  background-position: 0% 0;
+  color: black;
 }
 
 /* DASHBOARD */
@@ -735,4 +755,18 @@ body.modal-open {
 
 .footer a:hover i {
   color: #ffffff;
+}
+
+/* FOOTER CONTACT LINKS (email, phone, location inside <p> tags) */
+.footer-col p a {
+  display: inline;
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 0;
+  transition: color 0.3s;
+}
+
+.footer-col p a:hover {
+  color: #00f7ff;
+  padding-left: 0;
 }
