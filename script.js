@@ -557,3 +557,116 @@ document.addEventListener("click", (e) => {
   });
 
 })();
+
+
+// =========================
+// ✅ LOADING SCREEN
+// =========================
+(function initLoader() {
+  const overlay  = document.getElementById("loaderOverlay");
+  const bar      = document.getElementById("loaderBar");
+  const statusEl = document.getElementById("loaderStatus");
+  const percentEl= document.getElementById("loaderPercent");
+  const codesEl  = document.getElementById("loaderCodes");
+  if (!overlay) return;
+
+  document.body.style.overflow = "hidden";
+
+  const snippets = [
+    'SELECT worker, AVG(efficiency) FROM sewing_line GROUP BY line_id;',
+    'git push origin main && pm2 restart erp-server --update-env',
+    'def sync_erp(payload): return requests.post(ERP_API, json=payload)',
+    'docker build -t erp-app:latest . && docker-compose up -d --build',
+    '@app.post("/api/v1/production/sync") async def sync(data: ERPModel):',
+    'ALTER TABLE inventory ADD COLUMN iot_device_id VARCHAR(50) NOT NULL;',
+    'nginx -t && systemctl reload nginx && echo "Deploy success ✓"',
+    '{ "erp_users": 1000, "uptime": "99.9%", "efficiency_gain": "+18%" }',
+    'php artisan queue:work --tries=3 --timeout=60 --daemon',
+    'git commit -m "feat: AI-assisted ERP automation & IoT pipeline"',
+    'curl -X POST https://erp.amtranet.com/api/v1/sync -H "Bearer: ***"',
+    'SELECT kpi, target FROM production WHERE date=CURDATE() AND hit=1;',
+    'ansible-playbook deploy.yml -i hosts/production --tags=erp,iot',
+    'python automate.py --module=erp --env=production --verbose --ai',
+    'systemctl status logic-erp | grep "active (running)" | tail -1',
+    'INSERT INTO go_live_log (project, users, status) VALUES ("ERP",1000,"SUCCESS");',
+    'rsync -avz --delete dist/ deploy@server:/var/www/html/ --progress',
+    'SELECT SUM(output) FROM production_log WHERE shift="morning" AND wip=0;',
+    'import anthropic; ai = anthropic.Anthropic()  # Vibe coding session',
+    'git log --oneline --graph --decorate --all | head -20',
+    'cat /var/log/erp/error.log | grep -i "critical" | wc -l  # → 0',
+    'mysql -u root erp_db < migration_v3.sql && echo "Migration done ✓"',
+    'kubectl get pods -n production | grep erp  # Running: 4/4',
+    'SELECT COUNT(*) shipments FROM orders WHERE status="DISPATCHED";',
+  ];
+
+  const statuses = [
+    "Initializing systems...",
+    "Loading ERP modules...",
+    "Connecting to database...",
+    "Syncing IoT pipeline...",
+    "Running AI services...",
+    "Deploying to production...",
+    "System ready ✓",
+  ];
+
+  const DURATION  = 3000;
+  const STEP_MS   = 28;
+  const TOTAL_STEPS = Math.round(DURATION / STEP_MS);
+  const STATUS_STEP = Math.floor(TOTAL_STEPS / statuses.length);
+
+  let step = 0;
+  let lastStatusIdx = 0;
+
+  // Spawn a floating code line at a random position
+  function spawnCode() {
+    const el = document.createElement("div");
+    el.className = "code-float";
+    el.textContent = snippets[Math.floor(Math.random() * snippets.length)];
+
+    const dur = 3.2 + Math.random() * 2.4;
+    el.style.left             = (Math.random() * 92) + "%";
+    el.style.top              = (8  + Math.random() * 80) + "%";
+    el.style.fontSize         = (8.5 + Math.random() * 4) + "px";
+    el.style.color            = "rgba(0,247,255," + (0.07 + Math.random() * 0.22).toFixed(2) + ")";
+    el.style.animationDuration = dur + "s";
+
+    codesEl.appendChild(el);
+    setTimeout(() => el.remove(), dur * 1000 + 200);
+  }
+
+  // Seed initial burst then keep spawning
+  for (let i = 0; i < 8; i++) setTimeout(spawnCode, i * 70);
+  const spawnTimer = setInterval(spawnCode, 250);
+
+  // Progress ticker
+  const progressTimer = setInterval(() => {
+    step++;
+    const pct = Math.min(Math.round((step / TOTAL_STEPS) * 100), 100);
+    bar.style.width     = pct + "%";
+    percentEl.textContent = pct + "%";
+
+    const sIdx = Math.min(Math.floor(step / STATUS_STEP), statuses.length - 1);
+    if (sIdx !== lastStatusIdx) {
+      lastStatusIdx = sIdx;
+      statusEl.style.opacity = "0";
+      setTimeout(() => {
+        statusEl.textContent  = statuses[sIdx];
+        statusEl.style.opacity = "1";
+      }, 180);
+    }
+
+    if (step >= TOTAL_STEPS) clearInterval(progressTimer);
+  }, STEP_MS);
+
+  // Dismiss after 3 s
+  setTimeout(() => {
+    clearInterval(spawnTimer);
+    clearInterval(progressTimer);
+    overlay.classList.add("hidden");
+    document.body.style.overflow = "";
+    setTimeout(() => overlay.remove(), 800);
+  }, DURATION);
+
+  // Add fade transition to status text
+  statusEl.style.transition = "opacity 0.18s ease";
+})();
