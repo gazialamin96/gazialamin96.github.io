@@ -23,6 +23,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#blog">Insights</a></li>
     <li><a href="#personal">Personal</a></li>
     <li><a href="#references">References</a></li>
@@ -392,6 +393,67 @@
 </section>
 
 
+<!-- EDUCATION -->
+<section id="education" class="fade">
+  <h2>Education</h2>
+
+  <div class="grid">
+
+    <!-- BSc -->
+    <div class="card edu-card">
+      <div class="edu-year-badge">2020</div>
+      <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+      <h3 class="edu-degree">Bachelor of Science in Software Engineering</h3>
+      <p class="edu-institution">
+        <i class="fas fa-building-columns"></i>
+        American International University–Bangladesh
+      </p>
+      <p class="edu-location">
+        <i class="fas fa-location-dot"></i> Dhaka
+      </p>
+    </div>
+
+    <!-- HSC -->
+    <div class="card edu-card">
+      <div class="edu-year-badge">2014</div>
+      <div class="edu-icon"><i class="fas fa-school"></i></div>
+      <h3 class="edu-degree">Higher Secondary Certificate (HSC)</h3>
+      <p class="edu-institution">
+        <i class="fas fa-building-columns"></i>
+        Dhaka Imperial College
+      </p>
+      <p class="edu-location">
+        <i class="fas fa-location-dot"></i> Dhaka
+      </p>
+    </div>
+
+    <!-- SSC -->
+    <div class="card edu-card">
+      <div class="edu-year-badge">2012</div>
+      <div class="edu-icon"><i class="fas fa-school-flag"></i></div>
+      <h3 class="edu-degree">Secondary School Certificate (SSC)</h3>
+      <p class="edu-institution">
+        <i class="fas fa-building-columns"></i>
+        Pan Para High School and College
+      </p>
+      <p class="edu-location">
+        <i class="fas fa-location-dot"></i> Laksmipur
+      </p>
+    </div>
+
+  </div>
+
+  <!-- English Proficiency -->
+  <div class="edu-proficiency">
+    <i class="fas fa-language"></i>
+    <div>
+      <strong>English Proficiency</strong>
+      <span>Medium of Instruction (MOI)</span>
+    </div>
+  </div>
+
+</section>
+
 <!-- BLOG -->
 <section id="blog" class="fade">
   <h2>Insights</h2>
@@ -560,6 +622,7 @@ ERP implementation experience, and system leadership skills.
   <li><a href="#skills">Skills</a></li>
   <li><a href="#projects">Projects</a></li>
   <li><a href="#experience">Experience</a></li>
+  <li><a href="#education">Education</a></li>
   <li><a href="#contact">Contact</a></li>
 
       </ul>
@@ -617,6 +680,83 @@ ERP implementation experience, and system leadership skills.
     <div id="projectContent"></div>
 
   </div>
+</div>
+
+<!-- =============================================
+     FLOATING ACTION BUTTONS
+============================================= -->
+<div class="floating-btns">
+
+  <!-- SHARE BUTTON + POPUP -->
+  <div class="share-wrapper">
+
+    <div class="share-popup" id="sharePopup">
+      <p class="share-popup-title">
+        <i class="fas fa-share-alt"></i> Share Profile
+      </p>
+
+      <!-- URL + Copy -->
+      <div class="share-url-row">
+        <span>gazialamin96.github.io</span>
+        <button class="share-copy-btn" id="copyLinkBtn" onclick="copyProfileLink()" title="Copy link">
+          <i class="fas fa-copy"></i>
+        </button>
+      </div>
+
+      <!-- Native share button -->
+      <button class="share-native-btn" onclick="nativeShare()">
+        <i class="fas fa-share-alt"></i> Share via...
+      </button>
+
+      <hr class="share-divider">
+
+      <!-- Quick share icons -->
+      <div class="share-options">
+        <a class="share-opt linkedin" target="_blank" rel="noopener"
+           href="https://www.linkedin.com/sharing/share-offsite/?url=https://gazialamin96.github.io"
+           title="Share on LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a class="share-opt facebook" target="_blank" rel="noopener"
+           href="https://www.facebook.com/sharer/sharer.php?u=https://gazialamin96.github.io"
+           title="Share on Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a class="share-opt twitter" target="_blank" rel="noopener"
+           href="https://twitter.com/intent/tweet?url=https://gazialamin96.github.io&text=Check+out+Al+Amin's+portfolio!"
+           title="Share on X / Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a class="share-opt whatsapp-share" target="_blank" rel="noopener"
+           href="https://wa.me/?text=Check+out+Al+Amin's+portfolio:+https://gazialamin96.github.io"
+           title="Share via WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Share toggle button -->
+    <div class="float-item">
+      <span class="float-label">Share Profile</span>
+      <button class="float-btn share-btn" id="shareToggleBtn" onclick="toggleSharePopup()">
+        <i class="fas fa-share-alt"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- WHATSAPP BUTTON -->
+  <div class="float-item">
+    <span class="float-label">Chat on WhatsApp</span>
+    <a class="float-btn whatsapp-btn"
+       href="https://wa.me/8801773754462"
+       target="_blank"
+       rel="noopener"
+       title="Chat on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
 </div>
 
 <script src="script.js"></script>
