@@ -413,3 +413,69 @@ function initSlider() {
   // ✅ auto slide
   sliderInterval = setInterval(nextSlide, 3000);
 }
+
+
+// =========================
+// ✅ FLOATING ACTION BUTTONS
+// =========================
+
+function toggleSharePopup() {
+  const popup = document.getElementById("sharePopup");
+  const btn   = document.getElementById("shareToggleBtn");
+  const isOpen = popup.classList.toggle("visible");
+  btn.classList.toggle("open", isOpen);
+}
+
+function copyProfileLink() {
+  const url = "https://gazialamin96.github.io";
+  const btn = document.getElementById("copyLinkBtn");
+
+  const finish = (ok) => {
+    btn.classList.add("copied");
+    btn.innerHTML = ok
+      ? '<i class="fas fa-check"></i>'
+      : '<i class="fas fa-times"></i>';
+    setTimeout(() => {
+      btn.classList.remove("copied");
+      btn.innerHTML = '<i class="fas fa-copy"></i>';
+    }, 2200);
+  };
+
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(url).then(() => finish(true)).catch(() => finish(false));
+  } else {
+    // Legacy fallback
+    const el = document.createElement("textarea");
+    el.value = url;
+    el.style.position = "fixed";
+    el.style.opacity = "0";
+    document.body.appendChild(el);
+    el.select();
+    const ok = document.execCommand("copy");
+    document.body.removeChild(el);
+    finish(ok);
+  }
+}
+
+function nativeShare() {
+  if (navigator.share) {
+    navigator.share({
+      title: "Al Amin | Portfolio",
+      text:  "Check out Al Amin's portfolio — Senior System Analyst | ERP | DevOps | AI Automation",
+      url:   "https://gazialamin96.github.io"
+    }).catch(() => {});
+  } else {
+    // Fallback: just copy the link
+    copyProfileLink();
+  }
+}
+
+// Close share popup when clicking outside
+document.addEventListener("click", (e) => {
+  const wrapper = document.querySelector(".share-wrapper");
+  if (wrapper && !wrapper.contains(e.target)) {
+    document.getElementById("sharePopup").classList.remove("visible");
+    const btn = document.getElementById("shareToggleBtn");
+    if (btn) btn.classList.remove("open");
+  }
+});
